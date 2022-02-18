@@ -14,23 +14,8 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
   const [ characters, setCharacters] = useState([])
-  const [ currentCharacterIds, setCurrentCharacterIds] = useState([])
-  const [selectedID, setSelectedId] = useState("")
 
   const [searchTerm, setSearchTerm] = useState("")
-
-
-  const updateSelectId = (id) => {
-    if (selectedID === id) {
-      return
-    }
-
-    setSelectedId(id)
-    
-    if(!currentCharacterIds.indexOf(id)){
-      setCurrentCharacterIds([...currentCharacterIds,id])
-    }
-  }
 
 
 
@@ -60,9 +45,6 @@ const App = () => {
           key={character.created} 
           
           character= {character} 
-          currentCharacterIds = {currentCharacterIds} 
-          selectedID = {selectedID}
-          updateSelectId={updateSelectId}
           
           />)
       })}
